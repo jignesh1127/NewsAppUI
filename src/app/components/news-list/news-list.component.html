@@ -1,0 +1,15 @@
+<div>
+    <app-search (search)="search($event)"></app-search>
+    
+    <div class="loading-message" *ngIf="loading">
+      <span>Loading...</span>
+    </div>
+
+    <ul *ngIf="!loading">
+      <li *ngFor="let story of stories">
+        <a *ngIf="story.url" [href]="story.url" target="_blank">{{ story.title }}</a>
+        <span *ngIf="!story.url">{{ story.title }}</span>
+      </li>
+    </ul>
+    <app-pagination [page]="page" (pageChange)="changePage($event)"></app-pagination>
+  </div>
