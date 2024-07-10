@@ -42,13 +42,13 @@ describe('NewsListComponent', () => {
   });
 
   it('should load stories on init', () => {
-    expect(newsService.getStories).toHaveBeenCalledWith(1, 20);
+    expect(newsService.getStories).toHaveBeenCalledWith(1, 10);
     expect(component.stories).toEqual(dummyStories);
   });
 
   it('should load stories when page changes', () => {
     component.changePage(2);
-    expect(newsService.getStories).toHaveBeenCalledWith(2, 20);
+    expect(newsService.getStories).toHaveBeenCalledWith(2, 10);
     expect(component.stories).toEqual(dummyStories);
   });
 

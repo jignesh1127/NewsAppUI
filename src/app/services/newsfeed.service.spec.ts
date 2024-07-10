@@ -36,7 +36,7 @@ describe('NewsfeedService', () => {
       expect(stories).toEqual(dummyStories);
     });
 
-    const req = httpMock.expectOne('https://localhost:7072/api/NewsFeed/latestnews?page=1&pageSize=10');
+    const req = httpMock.expectOne('https://newsfeeder.azurewebsites.net/api/NewsFeed/latestnews?page=1&pageSize=10');
     expect(req.request.method).toBe('GET');
     req.flush(dummyStories);
   });
@@ -52,7 +52,7 @@ describe('NewsfeedService', () => {
       expect(stories).toEqual(dummyStories);
     });
 
-    const req = httpMock.expectOne('https://localhost:7072/api/NewsFeed/search?query=test');
+    const req = httpMock.expectOne('https://newsfeeder.azurewebsites.net/api/NewsFeed/search?query=test');
     expect(req.request.method).toBe('GET');
     req.flush(dummyStories);
   });

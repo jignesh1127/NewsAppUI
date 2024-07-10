@@ -8,7 +8,7 @@ import { Story } from '../models/Story';
 })
 export class NewsfeedService {
 
-  public apiUrl = 'https://localhost:7072/api/NewsFeed';
+  public apiUrl = 'https://newsfeeder.azurewebsites.net/api/NewsFeed';
 
   constructor(private http: HttpClient) {}
 
